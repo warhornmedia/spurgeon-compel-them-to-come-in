@@ -1,0 +1,176 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Compel Them to Come In},
+  pdfauthor={Charles Spurgeon},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% DEFINE PHYSICAL DOCUMENT SETTINGS HD
+% media settings
+\usepackage[paperwidth=5.5in, paperheight=8.5in]{geometry}
+
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+
+\usepackage{titling}
+\usepackage{pdfpages}
+\IfFileExists{./cover.pdf}{
+  \newcommand{\myCover}{./cover.pdf}}
+  {\IfFileExists{./cover.jpg}{
+    \newcommand{\myCover}{./cover.jpg}}
+    {\IfFileExists{./cover.png}{
+      \newcommand{\myCover}{./cover.png}}{}
+    }
+  }
+\@ifundefined{myCover}
+{}
+{
+\pretitle{\begin{center}\includepdf{\myCover}}
+\posttitle{\end{center}\setcounter{page}{0}}
+\usepackage{atbegshi}% http://ctan.org/pkg/atbegshi
+\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+}
+\clearpage\pagenumbering{roman}
+
+\newenvironment{poetry}[0]{\par\leftskip=2em\rightskip=2em}{\par\medskip}
+
+\setmainfont{Calluna}
+\newfontfamily\greekfont[Script=Greek]{LiberationSerif}
+
+\makeatother
+
+\frontmatter
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+
+\title{Compel Them to Come In}
+\author{Charles Spurgeon}
+\date{1858}
+
+\begin{document}
+\maketitle
+
+\mainmatter
+\pagenumbering{roman}
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{about-this-book}{%
+\chapter*{About this book}\label{about-this-book}}
+\addcontentsline{toc}{chapter}{About this book}
+
+Republished by \href{https://classics.warhornmedia.com/}{Warhorn Classics}---making classic Christian content available online for \textsc{free} in high quality, readable formats.
+
+The latest version of this book can always be found \href{https://warhornmedia.github.io/spurgeon-compel-them-to-come-in/}{here} in many electronic formats for your reading convenience on any device.
+
+\hypertarget{downloads}{%
+\subsubsection*{Downloads}\label{downloads}}
+\addcontentsline{toc}{subsubsection}{Downloads}
+
+\href{https://warhornmedia.github.io/spurgeon-compel-them-to-come-in//Spurgeon-Compel_Them_to_Come_In.pdf}{Download PDF}
+
+\href{https://warhornmedia.github.io/spurgeon-compel-them-to-come-in//Spurgeon-Compel_Them_to_Come_In.epub}{Download ePub}
+
+\hypertarget{original}{%
+\subsubsection*{Original}\label{original}}
+\addcontentsline{toc}{subsubsection}{Original}
+
+Scanned images of the original printing of this book are available \href{https://www.spurgeongems.org/sermon/chs227.pdf}{here}.
+
+\hypertarget{support-warhorn-classics}{%
+\subsubsection*{Support Warhorn Classics}\label{support-warhorn-classics}}
+\addcontentsline{toc}{subsubsection}{Support Warhorn Classics}
+
+We hope this book is a blessing to you. If it is, please \href{https://warhornmedia.com/give}{make a one-time or recurring contribution} right now, sponsor a book from our upcoming list, or volunteer your proofreading or technical skills to help produce more content. Contact \href{mailto:lucas@beggarsborn.com}{Lucas Weeks} to get involved.
+
+\clearpage
+\setcounter{page}{1}\pagenumbering{arabic}
+
+\hypertarget{sermon}{%
+\chapter{Sermon}\label{sermon}}
+
+I FEEL in such a haste to go out and obey this commandment this morning by compelling those to come in who are now tarrying in the highways and hedges that I cannot wait for an introduction, but must at once set about my business!
+
+Hear then, O you who are strangers to the truth of God as it is in Jesus---hear then the message that I have to bring you! You have fallen, fallen in your father Adam. You have also fallen in yourselves by your daily sin and your constant iniquity! You have provoked the anger of the Most High. And as assuredly as you have sinned, so certainly must God punish you if you persevere in your iniquity, for the Lord is a God of justice and will by no means spare the guilty! But have you not heard; has it not long been spoken in your ears that God, in His infinite mercy, has devised a way whereby, without any infringement upon His honor, He can have mercy upon you, the guilty and the undeserving? To you I speak! And my voice is unto you, O sons of men! Jesus Christ, very God of very God, has descended from heaven and was made in the likeness of sinful flesh! Begotten of the Holy Spirit, He was born of the Virgin Mary. He lived in this world a life of exemplary holiness and of the deepest suffering till, at last, He gave Himself up to die for our sins, ``the Just for the unjust, to bring us to God.'' And now the plan of salvation is simply declared unto you---``Whoever believes in the Lord Jesus Christ shall be saved.'' For you who have violated all the precepts of God and have disdained His mercy and dared His vengeance, there is yet mercy proclaimed, for ``Whoever calls upon the name of the Lord shall be saved.'' ``For this is a faithful saying and worthy of all acceptation, that Christ Jesus came into the world to save sinners, of whom I am chief.'' ``Whoever comes unto Him, He will in no wise cast out, for He is able also to save unto the uttermost those who come unto God by Him, seeing He ever lives to make intercession for us.'' Now, all that God asks of you---and this He gives you---is that you will simply look at His bleeding, dying Son and trust your souls in the hands of Him whose name alone can save from death and hell! Is it not a marvelous thing that the proclamation of this gospel does not receive the unanimous consent of men? One would think that as soon as ever this was preached, ``That whoever believes shall have eternal life,'' everyone of you, ``casting away every man his sins and his iniquities,'' would lay hold on Jesus Christ and look alone to His cross. But alas, such is the desperate evil of our nature; such the pernicious depravity of our character that this message is despised---the invitation to the gospel feast is rejected---and there are many of you who are this day enemies of God by wicked works! You are en- emies to the God who preaches Christ to you today---enemies to Him who sent His Son to give His life a ransom for many. Strange, I say, it is that it should be so, yet nevertheless it is the fact and hence the ne- cessity for the command of the text---``Compel them to come in.'' Children of God, you who have be- lieved, I shall have little or nothing to say to you this morning. I am going straight to my business---I am going after those who will not come---those who are in the byways and hedges---and God going with me, it is my duty now to fulfill this command, ``Compel them to come in.''
+
+First, I must, find you. Secondly, I will go to work to compel you to come in.
+
+\hypertarget{first-i-must-find-you}{%
+\subsection*{First, I must find you}\label{first-i-must-find-you}}
+\addcontentsline{toc}{subsection}{First, I must find you}
+
+\ldots{}
+
+\end{document}
