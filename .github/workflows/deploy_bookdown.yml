@@ -70,7 +70,7 @@ jobs:
       - name: Install fonts
         run: |
           unzip classics-template-files/fonts/font1.zip
-          cp Calluna/Calluna-Regular.otf ~/Library/Fonts
+          cp -vf Calluna/Calluna-Regular.otf ~/Library/Fonts
 
       - name: Render Book
         run: |
