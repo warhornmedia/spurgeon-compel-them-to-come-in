@@ -12,21 +12,37 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: r-lib/actions/setup-r@v1
-      - uses: r-lib/actions/setup-pandoc@v1
+
+      - name: Install Pandoc
+        uses: r-lib/actions/setup-pandoc@v1
+        with:
+          pandoc-version: '2.10.1'
+
+      - name: Install TinyTeX
+        uses: r-lib/actions/setup-tinytex@v1
+        env:
+          # install full prebuilt version
+          TINYTEX_INSTALLER: TinyTeX
+
+
       - name: Install rmarkdown
         run: Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
+
       - name: Clone template files
         run: git clone https://github.com/warhornmedia/classics-template-files.git
+
       - name: Install fonts
         run: |
           unzip classics-template-files/fonts/font1.zip
           mkdir ~/.fonts
           cp Calluna/Calluna-Regular.otf ~/.fonts
+
       - name: Render Book
         run: |
           Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
           Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
           Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::epub_book')"
+
       - uses: actions/upload-artifact@v1
         with:
           name: _book
