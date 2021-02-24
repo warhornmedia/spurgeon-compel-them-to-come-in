@@ -24,7 +24,7 @@ jobs:
           # install full prebuilt version
           TINYTEX_INSTALLER: TinyTeX
 
-      - name: Install rmarkdown
+      - name: Install rmarkdown & bookdown
         run: Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
 
       - name: Query dependencies
@@ -55,14 +55,14 @@ jobs:
 #        run: xfun::install_dir(".")
 #        shell: Rscript {0}
 
-      - name: Session info
-        run: |
-          options(width = 100)
-          remotes::install_cran("sessioninfo")
-          pkgs <- installed.packages()[, "Package"]
-          sessioninfo::session_info(pkgs, include_base = TRUE)
-          rmarkdown::find_pandoc()
-        shell: Rscript {0}
+#      - name: Session info
+#        run: |
+#          options(width = 100)
+#          remotes::install_cran("sessioninfo")
+#          pkgs <- installed.packages()[, "Package"]
+#          sessioninfo::session_info(pkgs, include_base = TRUE)
+#          rmarkdown::find_pandoc()
+#        shell: Rscript {0}
 
       - name: Clone template files
         run: git clone https://github.com/warhornmedia/classics-template-files.git
@@ -83,10 +83,10 @@ jobs:
           Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
           Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::epub_book')"
 
-      - uses: actions/upload-artifact@v1
-        with:
-          name: _book
-          path: _book/
+#      - uses: actions/upload-artifact@v1
+#        with:
+#          name: _book
+#          path: _book/
 
       - name: deploy to github pages
         uses: JamesIves/github-pages-deploy-action@4.0.0
