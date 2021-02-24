@@ -98,8 +98,9 @@ jobs:
    steps:
     - name: checkout
       uses: actions/checkout@v2
+    - uses: actions/download-artifact@v2
       with:
-        persist-credentials: false
+        name: _book
     - name: deploy to github pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
