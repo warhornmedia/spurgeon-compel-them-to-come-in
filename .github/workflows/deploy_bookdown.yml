@@ -72,10 +72,10 @@ jobs:
           unzip classics-template-files/fonts/font1.zip
           unzip classics-template-files/fonts/font2.zip
           sudo cp -vf Calluna/Calluna-Regular.otf /Library/Fonts
-          sudo cp -vf font2/LiberationSerif-Regular.ttf /Library/Fonts
-          sudo cp -vf font2/LiberationSerif-BoldItalic.ttf /Library/Fonts
-          sudo cp -vf font2/LiberationSerif-Bold.ttf /Library/Fonts
-          sudo cp -vf font2/LiberationSerif-Italic.ttf /Library/Fonts
+          sudo cp -vf LiberationSerif-Regular.ttf /Library/Fonts
+          sudo cp -vf LiberationSerif-BoldItalic.ttf /Library/Fonts
+          sudo cp -vf LiberationSerif-Bold.ttf /Library/Fonts
+          sudo cp -vf LiberationSerif-Italic.ttf /Library/Fonts
 
       - name: Render Book
         run: |
