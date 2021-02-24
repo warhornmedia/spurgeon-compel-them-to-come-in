@@ -88,13 +88,10 @@ jobs:
           name: _book
           path: _book/
 
-      - name: checkout
-        uses: actions/checkout@v2
-
       - name: deploy to github pages
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
+          TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
           BRANCH: gh-pages # The branch the action should deploy to
           FOLDER: _book # The folder the action should deploy
           CLEAN: true # Automatically remove deleted files from the deploy branch
