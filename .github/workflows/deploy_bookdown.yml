@@ -40,20 +40,20 @@ jobs:
 #          brew install --cask xquartz
 #          brew install --cask calibre
 
-      - name: Install phamtomJS for webshot
-        run: |
-          remotes::install_cran("webshot")
-          webshot::install_phantomjs()
-        shell: Rscript {0}
+#      - name: Install phamtomJS for webshot
+#        run: |
+#          remotes::install_cran("webshot")
+#          webshot::install_phantomjs()
+#        shell: Rscript {0}
 
       - name: Install R dependencies for bookdown
         run: |
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
 
-      - name: Install bookdown package
-        run: xfun::install_dir(".")
-        shell: Rscript {0}
+#      - name: Install bookdown package
+#        run: xfun::install_dir(".")
+#        shell: Rscript {0}
 
       - name: Session info
         run: |
@@ -95,25 +95,3 @@ jobs:
           BRANCH: gh-pages # The branch the action should deploy to
           FOLDER: _book # The folder the action should deploy
           CLEAN: true # Automatically remove deleted files from the deploy branch
-
-
-# Need to first create an empty gh-pages branch
-# see https://pkgdown.r-lib.org/reference/deploy_site_github.html
-# and also add secrets for a GH_PAT and EMAIL to the repository
-# gh-action from Cecilapp/GitHub-Pages-deploy
-  checkout-and-deploy:
-   runs-on: ubuntu-latest
-   needs: bookdown
-   steps:
-    - name: checkout
-      uses: actions/checkout@v2
-    - uses: actions/download-artifact@v2
-      with:
-        name: _book
-    - name: deploy to github pages
-      uses: JamesIves/github-pages-deploy-action@4.0.0
-      with:
-        GITHUB_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
-        BRANCH: gh-pages # The branch the action should deploy to
-        FOLDER: _book # The folder the action should deploy
-        CLEAN: true # Automatically remove deleted files from the deploy branch
