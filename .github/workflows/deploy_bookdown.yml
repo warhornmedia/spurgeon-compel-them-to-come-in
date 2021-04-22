@@ -67,21 +67,27 @@ jobs:
       - name: Clone template files
         run: git clone https://github.com/warhornmedia/classics-template-files.git
 
-      - name: Install fonts
+      - name: Run Build Script
         run: |
-          unzip classics-template-files/fonts/font1.zip
-          unzip classics-template-files/fonts/font2.zip
-          sudo cp -vf Calluna/Calluna-Regular.otf /Library/Fonts
-          sudo cp -vf LiberationSerif-Regular.ttf /Library/Fonts
-          sudo cp -vf LiberationSerif-BoldItalic.ttf /Library/Fonts
-          sudo cp -vf LiberationSerif-Bold.ttf /Library/Fonts
-          sudo cp -vf LiberationSerif-Italic.ttf /Library/Fonts
+          mv classics-template-files/scripts/*.sh .
+          chmod +x ./_buildGHA.sh
+          ./_buildGHA.sh
 
-      - name: Render Book
-        run: |
-          Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
-          Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
-          Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::epub_book')"
+#      - name: Install fonts
+#        run: |
+#          unzip classics-template-files/fonts/font1.zip
+#          unzip classics-template-files/fonts/font2.zip
+#          sudo cp -vf Calluna/Calluna-Regular.otf /Library/Fonts
+#          sudo cp -vf LiberationSerif-Regular.ttf /Library/Fonts
+#          sudo cp -vf LiberationSerif-BoldItalic.ttf /Library/Fonts
+#          sudo cp -vf LiberationSerif-Bold.ttf /Library/Fonts
+#          sudo cp -vf LiberationSerif-Italic.ttf /Library/Fonts
+
+#      - name: Render Book
+#        run: |
+#          Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+#          Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
+#          Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::epub_book')"
 
 #      - uses: actions/upload-artifact@v1
 #        with:
