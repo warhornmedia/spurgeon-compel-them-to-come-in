@@ -71,7 +71,7 @@ jobs:
         run: |
           mv classics-template-files/scripts/*.sh .
           chmod +x ./_buildGHA.sh
-          ./_buildGHA.sh
+          ./_buildGHA.sh --includeMobi
 
 #      - name: Install fonts
 #        run: |
