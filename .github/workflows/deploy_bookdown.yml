@@ -27,12 +27,12 @@ jobs:
       - name: Install rmarkdown & bookdown
         run: Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
 
-      - name: Query dependencies
-        run: |
-          install.packages('remotes')
-          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
-          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
-        shell: Rscript {0}
+#      - name: Query dependencies
+#        run: |
+#          install.packages('remotes')
+#          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
+#          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
+#        shell: Rscript {0}
 
 #      - name: Install OS dependencies
 #        run: |
@@ -46,10 +46,10 @@ jobs:
 #          webshot::install_phantomjs()
 #        shell: Rscript {0}
 
-      - name: Install R dependencies for bookdown
-        run: |
-          remotes::install_deps(dependencies = TRUE)
-        shell: Rscript {0}
+#      - name: Install R dependencies for bookdown
+#        run: |
+#          remotes::install_deps(dependencies = TRUE)
+#        shell: Rscript {0}
 
 #      - name: Install bookdown package
 #        run: xfun::install_dir(".")
