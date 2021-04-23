@@ -5,7 +5,7 @@ date: "1858"
 description: "This sermon... description"
 params:
   scans: "https://www.spurgeongems.org/sermon/chs227.pdf"
-  build: "7"
+  build: "8"
 cover-image: "cover.jpg"
 url: "https://warhornmedia.github.io/spurgeon-compel-them-to-come-in/"
 output: 
