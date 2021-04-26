@@ -4,6 +4,7 @@ author: "Charles Spurgeon"
 date: "1858"
 description: "This sermon... description"
 params:
+  pubinfo: "Originally published as “This Is An Empty Book” in *Warhorn Classics Anthology* (Bayly, McNeilly, Weeks, et al, 2020), 219–283."
   scans: "https://www.spurgeongems.org/sermon/chs227.pdf"
   build: "8"
 cover-image: "cover.jpg"
@@ -14,10 +15,9 @@ output:
       toc:
         scroll_highlight: yes
         before: |
-          <li><a href="https://www.warhornmedia.com/"><img src="classics-template-files/images/warhornlogo.png" width="260"></a></li>
+          <li><a href="https://classics.warhornmedia.com/"><img src="classics-template-files/images/warhornlogo.png" width="260"></a></li>
           <li><a href="./">Compel Them to Come In — Spurgeon</a></li>
         after: |
-          <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
       edit: https://github.com/warhornmedia/spurgeon-compel-them-to-come-in/edit/master/%s
 documentclass: book
 always_allow_html: yes
